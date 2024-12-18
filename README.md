@@ -11,11 +11,13 @@ Relevant links:
 * [Thesis Outline](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Human_Parser/Thesis_Outline)
 * [My T4 Pre-Assessment Presentation](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/T4_Assessment)
 
-Links to pages or projects mentioned in my presentation:
+Links to pages or projects I might mention in my presentation:
 * [The Hitchhiker's Guide to an Active Archive](https://pzwiki.wdka.nl/mediadesign/The_Hitchhiker's_Guide_to_an_Active_Archive) (CYOA radio play)
 * [Archival Oceans](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Archival_Oceans) (zine)
 * [Electrifying](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Notes_on_SI23/Electrifying) (mini text-adventure)
+* [Wiki Wanderer](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Entrance_1) (wiki CYOA game)
 * [The Robot Assembly Line and Social Performance Testing Facility](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Human_Parser/The_Robot_Assembly_Line_and_Social_Performance_Testing_Facility) (playtest and performance)
+* [twitchplaysplotter](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Pen_Plotting_Panache/twitchplaysplotter) (plotter livestream setup for long distance plotting with many people)
 * [Jitterbots](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Human_Parser/The_Robot_Assembly_Line_and_Social_Performance_Testing_Facility) (comic)
 * [The Pink Grasses of Pink V](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Battles_the_Pale_Grasses_of_Pink_V) (short story)
 * [Personal Pen Plotting Page](https://pzwiki.wdka.nl/mediadesign/User:Thijshijsijsjss/Pen_Plotting_Panache) (wiki collection)
