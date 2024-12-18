@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://qtkcq4i6ub2b"]
+
+[ext_resource type="Script" path="res://slide_info.gd" id="1_jqu1y"]
+[ext_resource type="FontFile" uid="uid://cxs1mrmu32krk" path="res://fonts/NotCourierSans.ttf" id="1_sft72"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5847"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="RoomInfo" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 84.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k5847")
+script = ExtResource("1_jqu1y")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RoomName" type="RichTextLabel" parent="MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_sft72")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Welcome to my assessment presentation![/center]"
+fit_content = true
+
+[node name="RoomDescription" type="RichTextLabel" parent="MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_sft72")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Thank you for helping me find the courage to present today.
+
+I think I'm good now, I will take over from here :)[/center]"
+fit_content = true
+
+[node name="Gallery" type="HBoxContainer" parent="MarginContainer/Rows"]
+layout_mode = 2
+alignment = 1
+
+[node name="RoomImage1" type="TextureRect" parent="MarginContainer/Rows/Gallery"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RoomImage2" type="TextureRect" parent="MarginContainer/Rows/Gallery"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RoomImage3" type="TextureRect" parent="MarginContainer/Rows/Gallery"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5

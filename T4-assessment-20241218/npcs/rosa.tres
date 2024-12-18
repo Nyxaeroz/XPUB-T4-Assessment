@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://dblc107l5ckw7"]
+
+[ext_resource type="Script" path="res://npcs/npc.gd" id="1_dt4tv"]
+
+[resource]
+script = ExtResource("1_dt4tv")
+NPC_name = "rosa"
+pre_dialogue = "..."
+post_dialogue = ""

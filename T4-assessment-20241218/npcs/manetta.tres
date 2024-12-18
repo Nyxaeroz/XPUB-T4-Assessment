@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://2kam8ivakd0h"]
+
+[ext_resource type="Script" path="res://npcs/npc.gd" id="1_u40u7"]
+
+[resource]
+script = ExtResource("1_u40u7")
+NPC_name = "manetta"
+pre_dialogue = "[wave amp=20.0 freq=5.0 connected=1]Were we just locked in here?[/wave]"
+post_dialogue = ""

@@ -1,0 +1,134 @@
+[gd_scene load_steps=14 format=3 uid="uid://h14fjk56vu17"]
+
+[ext_resource type="Script" path="res://input/input.gd" id="1_3weaa"]
+[ext_resource type="FontFile" uid="uid://cxs1mrmu32krk" path="res://fonts/NotCourierSans.ttf" id="1_jeyen"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_plpw1"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_7ir2k"]
+[ext_resource type="Script" path="res://scripts/command_processor.gd" id="2_q71r7"]
+[ext_resource type="PackedScene" uid="uid://dbsc20osan8bb" path="res://rooms/game_room.tscn" id="3_6tiva"]
+[ext_resource type="Script" path="res://rooms/room_manager.gd" id="3_rrdno"]
+[ext_resource type="PackedScene" uid="uid://c63668q5xj7xj" path="res://game_info.tscn" id="6_ttvnk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enk3v"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spgsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a6a4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfj56"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p4kjj"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_plpw1")
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource("2_7ir2k")
+
+[node name="CommandProcessor" type="Node" parent="."]
+script = ExtResource("2_q71r7")
+
+[node name="RoomManager" type="Node" parent="."]
+script = ExtResource("3_rrdno")
+
+[node name="CommonAreaRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 165.0
+offset_top = -495.0
+offset_right = 415.0
+offset_bottom = -295.0
+room_name = "WH 4th floor"
+room_description = "the common area of the 4th floor of WH"
+
+[node name="StudioRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 164.0
+offset_top = -711.0
+offset_right = 414.0
+offset_bottom = -511.0
+room_name = "XPUB Studio"
+room_description = "the safe haven for lost graduate students"
+
+[node name="AquariumRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 433.0
+offset_top = -492.0
+offset_right = 683.0
+offset_bottom = -292.0
+room_name = "Aquarium"
+room_description = "a big bowl for lost fish"
+
+[node name="OfficeRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = -95.0
+offset_top = -495.0
+offset_right = 155.0
+offset_bottom = -295.0
+room_name = "PZI office"
+room_description = "a place where the tutors practise their mysterious rituals"
+
+[node name="CantinaRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 164.0
+offset_top = -286.0
+offset_right = 414.0
+offset_bottom = -86.0
+room_name = "the cantina"
+room_description = "for prototyping and prototyping only!"
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_enk3v")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GameInfo" parent="Background/MarginContainer/Rows" instance=ExtResource("6_ttvnk")]
+layout_mode = 2
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_styles/panel = SubResource("StyleBoxFlat_spgsp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/Rows/InputArea"]
+layout_mode = 2
+
+[node name="Caret" type="Label" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jeyen")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a6a4n")
+text = " [this robot]"
+
+[node name="Input" type="LineEdit" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_jeyen")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pfj56")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p4kjj")
+placeholder_text = "types here"
+max_length = 48
+script = ExtResource("1_3weaa")
+
+[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="." method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" method="_on_text_submitted"]

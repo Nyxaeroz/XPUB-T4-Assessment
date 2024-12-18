@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://pwlwsokxr5ka"]
+
+[ext_resource type="Script" path="res://input/input_response.gd" id="1_3e1wx"]
+[ext_resource type="PackedScene" uid="uid://lgaa50fnvss3" path="res://input/input.tscn" id="2_6w5sy"]
+[ext_resource type="PackedScene" uid="uid://bcdl3e8xq8prt" path="res://input/response.tscn" id="3_4xcq1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8b57"]
+bg_color = Color(1, 1, 1, 0.0627451)
+expand_margin_left = 5.0
+
+[node name="InputResponse" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+script = ExtResource("1_3e1wx")
+
+[node name="Zebra" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8b57")
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Input" parent="Rows" instance=ExtResource("2_6w5sy")]
+layout_mode = 2
+
+[node name="Response" parent="Rows" instance=ExtResource("3_4xcq1")]
+layout_mode = 2

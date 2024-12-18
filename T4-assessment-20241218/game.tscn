@@ -1,0 +1,225 @@
+[gd_scene load_steps=28 format=3 uid="uid://h14fjk56vu17"]
+
+[ext_resource type="Script" path="res://input/input.gd" id="1_3weaa"]
+[ext_resource type="FontFile" uid="uid://cxs1mrmu32krk" path="res://fonts/NotCourierSans.ttf" id="1_jeyen"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_plpw1"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_7ir2k"]
+[ext_resource type="Script" path="res://scripts/command_processor.gd" id="2_q71r7"]
+[ext_resource type="PackedScene" uid="uid://dbsc20osan8bb" path="res://rooms/game_room.tscn" id="3_6tiva"]
+[ext_resource type="Script" path="res://rooms/room_manager.gd" id="3_rrdno"]
+[ext_resource type="Texture2D" uid="uid://euu7dn4ree5" path="res://images/PM20241104-camera-michael-6.jpg" id="6_fhqrm"]
+[ext_resource type="PackedScene" uid="uid://c63668q5xj7xj" path="res://game_info.tscn" id="6_ttvnk"]
+[ext_resource type="Texture2D" uid="uid://de0mjcw5cht1k" path="res://images/424px-THHGTAAA_visual_promo.jpg" id="6_uknc2"]
+[ext_resource type="PackedScene" uid="uid://qtkcq4i6ub2b" path="res://slide_info.tscn" id="7_8cfp7"]
+[ext_resource type="Texture2D" uid="uid://bal2rak6su610" path="res://images/800px-Archival-oceans-all.jpg" id="7_ig5a8"]
+[ext_resource type="Texture2D" uid="uid://beui148f41qt5" path="res://images/FD_session_1_poster.png" id="8_ey1wy"]
+[ext_resource type="Texture2D" uid="uid://dw1036kl0sh2t" path="res://images/701px-Electrifying3.png" id="8_wopq0"]
+[ext_resource type="Texture2D" uid="uid://d3xfc8xiqrwk8" path="res://images/800px-Forked_dialogues_session1_photo1.jpg" id="9_0f8l3"]
+[ext_resource type="Texture2D" uid="uid://c6xgebvs0whn1" path="res://images/1197px-PM20241104-camera-mania-5.png" id="9_53wcb"]
+[ext_resource type="Texture2D" uid="uid://d3njot42frx1j" path="res://images/800px-Jitterbots-01-post.png" id="9_fjhti"]
+[ext_resource type="Texture2D" uid="uid://cnkv2rovvuynu" path="res://images/450px-Forked_dialogues_session1_photo2.jpg" id="10_jj6s5"]
+[ext_resource type="Texture2D" uid="uid://bf3v4k7cvn25v" path="res://images/Screenshot_pink_V_short_story.png" id="10_jl3yu"]
+[ext_resource type="Texture2D" uid="uid://bllv80iqtn1q2" path="res://images/PPP-20240212-table.jpg" id="10_v1fgp"]
+[ext_resource type="Texture2D" uid="uid://0iqp4q5xiv7s" path="res://images/1197px-PM20241104-camera-mania-11.png" id="11_133fa"]
+[ext_resource type="Texture2D" uid="uid://g8at3nvff3nk" path="res://images/forked_dialogues_session1_map.png" id="11_jx2a5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enk3v"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spgsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a6a4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfj56"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p4kjj"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_plpw1")
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource("2_7ir2k")
+
+[node name="CommandProcessor" type="Node" parent="."]
+script = ExtResource("2_q71r7")
+
+[node name="RoomManager" type="Node" parent="."]
+script = ExtResource("3_rrdno")
+
+[node name="StudioRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 164.0
+offset_top = -711.0
+offset_right = 414.0
+offset_bottom = -511.0
+room_name = "XPUB Studio"
+room_description = "the safe haven for lost graduate students. Thijs spends a lot of time here."
+
+[node name="AquariumRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 438.0
+offset_top = -495.0
+offset_right = 688.0
+offset_bottom = -295.0
+room_name = "Aquarium"
+room_description = "The assessment panel is seated behind their laptops. At this point, Thijs is unsure how they feel. Excited?"
+
+[node name="CommonAreaRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 164.0
+offset_top = -495.0
+offset_right = 414.0
+offset_bottom = -295.0
+room_name = "4th floor common area"
+room_description = "The assessment panel is already visible through the aquarium's glass walls. The nerves start to kick in."
+
+[node name="OfficeRoom" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = -106.0
+offset_top = -495.0
+offset_right = 144.0
+offset_bottom = -295.0
+room_name = "PZI office"
+room_description = "Thijs wonders: why the nerves? You have confidence in your proposal, right? Is it because you're being assessed? Because of the uncertainty of expectations? The graduation project is full of them, uncertain expectations."
+
+[node name="XML" parent="RoomManager" instance=ExtResource("3_6tiva")]
+offset_left = 438.0
+offset_top = -825.0
+offset_right = 688.0
+offset_bottom = -625.0
+room_name = "XML"
+room_description = "the experimental magic lab. It's quiet here. No one around."
+
+[node name="SlideManager" type="Node" parent="."]
+
+[node name="what" parent="SlideManager" instance=ExtResource("3_6tiva")]
+offset_left = -2244.0
+offset_top = -859.0
+offset_right = -1994.0
+offset_bottom = -523.0
+room_name = "What do I want to make?"
+room_description = "A [pulse freq=0.5 color=#ffffff40 ease=-2.0]text-adventure game[/pulse] to explore feelings of disassociativity.
+Accompanied by a [pulse freq=0.5 color=#ffffff40 ease=-2.0]game manual[/pulse], which would house my thesis."
+room_images = Array[Texture]([ExtResource("6_uknc2"), ExtResource("7_ig5a8"), ExtResource("8_wopq0")])
+
+[node name="game" parent="SlideManager" instance=ExtResource("3_6tiva")]
+offset_left = -2244.0
+offset_top = -859.0
+offset_right = -1994.0
+offset_bottom = -523.0
+room_name = "What is the game about?"
+room_description = "The Robot Assembly Line and Social Performance Testing Facility (?)"
+room_images = Array[Texture]([ExtResource("9_53wcb"), ExtResource("6_fhqrm"), ExtResource("11_133fa")])
+
+[node name="why" parent="SlideManager" instance=ExtResource("3_6tiva")]
+offset_left = -1974.0
+offset_top = -859.0
+offset_right = -1724.0
+offset_bottom = -659.0
+room_name = "Why do I want to make this?"
+room_description = "\"Obsolete media\" that fundamentally oppose current trends
+
+Lacking representation of authentic displays of disassociativity
+
+What does it mean to 'come with a manual' in a social context, anyway?
+
+"
+room_images = Array[Texture]([ExtResource("9_fjhti"), ExtResource("10_jl3yu"), ExtResource("10_v1fgp")])
+
+[node name="how" parent="SlideManager" instance=ExtResource("3_6tiva")]
+offset_left = -1698.0
+offset_top = -859.0
+offset_right = -1448.0
+offset_bottom = -523.0
+room_name = "How do I plan to make this?"
+room_description = "Research, creation and writing
+
+Godot, Aseprite, Krita, ...
+
+Playtesting, playtesting and playtesting
+
+"
+room_images = Array[Texture]([ExtResource("6_fhqrm"), ExtResource("8_ey1wy")])
+
+[node name="forked-dialogues" parent="SlideManager" instance=ExtResource("3_6tiva")]
+offset_left = -1424.0
+offset_top = -859.0
+offset_right = -1174.0
+offset_bottom = -659.0
+room_name = "Forked Dialogues"
+room_description = "How can playtesting be an opportunity for more?"
+room_images = Array[Texture]([ExtResource("9_0f8l3"), ExtResource("10_jj6s5"), ExtResource("11_jx2a5")])
+
+[node name="human-parser" parent="SlideManager" instance=ExtResource("3_6tiva")]
+offset_left = -1148.0
+offset_top = -859.0
+offset_right = -898.0
+offset_bottom = -659.0
+room_name = "Human Parser"
+room_description = "A human parser is an interpreter that happens to be a human agent
+
+A human parser is an interpreter that parses humans
+
+A human parser makes the act of parsing, or interpreting, human"
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_enk3v")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SlideInfo" parent="Background/MarginContainer/Rows" instance=ExtResource("7_8cfp7")]
+visible = false
+layout_mode = 2
+
+[node name="GameInfo" parent="Background/MarginContainer/Rows" instance=ExtResource("6_ttvnk")]
+layout_mode = 2
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_styles/panel = SubResource("StyleBoxFlat_spgsp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/Rows/InputArea"]
+layout_mode = 2
+
+[node name="Caret" type="Label" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jeyen")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a6a4n")
+text = " Instruct Thijs to: "
+
+[node name="Input" type="LineEdit" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_jeyen")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pfj56")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p4kjj")
+placeholder_text = "type here"
+max_length = 48
+script = ExtResource("1_3weaa")
+
+[connection signal="resized" from="Background/MarginContainer/Rows/GameInfo" to="Background/MarginContainer/Rows/GameInfo" method="_on_resized"]
+[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="." method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" method="_on_text_submitted"]

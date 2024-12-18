@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbsc20osan8bb"]
+
+[ext_resource type="Script" path="res://rooms/game_room.gd" id="1_fird7"]
+[ext_resource type="FontFile" uid="uid://r7pgk028hqyj" path="res://fonts/NotCourierSans-Bold.ttf" id="1_ufwtp"]
+[ext_resource type="FontFile" uid="uid://cxs1mrmu32krk" path="res://fonts/NotCourierSans.ttf" id="2_3la5e"]
+
+[node name="GameRoom" type="PanelContainer"]
+custom_minimum_size = Vector2(250, 200)
+offset_right = 250.0
+offset_bottom = 200.0
+script = ExtResource("1_fird7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RoomName" type="Label" parent="MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ufwtp")
+theme_override_font_sizes/font_size = 24
+text = "Room Name"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RoomDescription" type="Label" parent="MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3la5e")
+theme_override_font_sizes/font_size = 16
+text = "This is a description of the room"
+autowrap_mode = 2
+
+[node name="RoomImage" type="TextureRect" parent="MarginContainer/Rows"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+stretch_mode = 3

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://lgaa50fnvss3"]
+
+[ext_resource type="FontFile" uid="uid://cxs1mrmu32krk" path="res://fonts/NotCourierSans.ttf" id="1_smnga"]
+
+[node name="Input" type="Label"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.585938, 0.585938, 0.585938, 1)
+theme_override_fonts/font = ExtResource("1_smnga")
+theme_override_font_sizes/font_size = 24
+text = "This is what was entered"
+autowrap_mode = 2

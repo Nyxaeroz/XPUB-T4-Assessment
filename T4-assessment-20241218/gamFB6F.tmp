@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c63668q5xj7xj"]
+
+[ext_resource type="Script" path="res://game_info.gd" id="1_eknq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cfbs"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="GameInfo" type="PanelContainer"]
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cfbs")
+script = ExtResource("1_eknq2")
+max_lines_remembered = null
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="HistoryRows" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20

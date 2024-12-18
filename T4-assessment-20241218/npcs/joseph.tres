@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=3 format=3 uid="uid://ctnbn5p8fbqdb"]
+
+[ext_resource type="Script" path="res://npcs/npc.gd" id="1_ax5ps"]
+[ext_resource type="Resource" uid="uid://ligrkgr4ioln" path="res://items/Scissors.tres" id="1_k6lub"]
+
+[resource]
+script = ExtResource("1_ax5ps")
+NPC_name = "joseph"
+pre_dialogue = "La di da"
+post_dialogue = "Ahh, thank you, thank you. Oh? You want me to open the aquarium? Will do!"
+quest_item = ExtResource("1_k6lub")

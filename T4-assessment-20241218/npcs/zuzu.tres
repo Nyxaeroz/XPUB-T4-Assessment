@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://b3vsejbouf36f"]
+
+[ext_resource type="Script" path="res://npcs/npc.gd" id="1_kq772"]
+
+[resource]
+script = ExtResource("1_kq772")
+NPC_name = "zuzu"
+pre_dialogue = "You're next, right?"
+post_dialogue = ""
